@@ -1,0 +1,406 @@
+/* =========================================================
+   BASE / TOKENS
+   Variáveis de cores, fontes e espaçamentos
+========================================================= */
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray-100: #f7f7f7;
+  --gray-200: #efefef;
+  --gray-400: #cfcfcf;
+  --text: #000;
+  --text-inverse: #fff;
+  --container: 1120px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 72px;
+  --space-7: 96px;
+  --radius: 6px;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave */
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--white);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Texto visível só para leitores de tela */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Container centralizado */
+.container {
+  width: min(92%, var(--container));
+  margin-inline: auto;
+}
+
+/* =========================================================
+   HEADER FIXO + MENU
+========================================================= */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 72px;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Menu horizontal */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  font-family: var(--font-sans);
+  text-decoration: none;
+  color: var(--black);
+  font-size: 0.95rem;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Remove borda azul ao clicar */
+.menu a:focus,
+.menu a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+/* Compensa altura do header fixo */
+section {
+  scroll-margin-top: 84px;
+}
+
+/* =========================================================
+   HERO / CAPA
+========================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding-top: 72px; /* não deixar header cobrir */
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background: url("img/hero.jpg") center/cover no-repeat fixed;
+}
+
+/* Máscara escura */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, .35) 0%,
+    rgba(0, 0, 0, .35) 60%,
+    rgba(0, 0, 0, .45) 100%);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--white);
+}
+
+/* Texto pequeno acima */
+.kicker {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+  opacity: 0.9;
+}
+
+/* Nome em destaque */
+.display-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 7vw, 5.2rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Texto pequeno abaixo */
+.subtitle {
+  margin-top: var(--space-2);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+.section {
+  padding: var(--space-7) 0;
+}
+
+.section--light {
+  background: var(--white);
+  color: var(--text);
+}
+
+.section--dark {
+  background: var(--black);
+  color: var(--text-inverse);
+}
+
+.section--center {
+  text-align: center;
+}
+
+.narrow {
+  width: min(760px, 92%);
+  margin-inline: auto;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin: 0 0 var(--space-3) 0;
+}
+
+/* Texto corrido */
+p,
+li {
+  font-size: 1rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* Citação em destaque */
+.big-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  line-height: 1.35;
+}
+
+/* Layout dividido */
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+/* Versão invertida */
+.split--reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.split--reverse .col-media {
+  order: -1;
+}
+
+.col-media img {
+  margin: 0;
+  display: block;
+}
+
+/* Espaçamento interno no texto */
+.split .col-text > * {
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+  box-sizing: border-box;
+}
+
+.split--reverse .col-text > * {
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+  box-sizing: border-box;
+}
+
+/* Lista sem bolinhas */
+.list-plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-plain li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--gray-400);
+}
+
+.section--dark .list-plain li {
+  border-color: rgba(255, 255, 255, .25);
+}
+
+/* Imagem com proporção fixa */
+.ratio {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--gray-200);
+}
+
+.ratio img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid currentColor; /* usa a cor do texto */
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: transform .06s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Botão em fundo escuro */
+.section--dark .btn {
+  color: var(--white);
+}
+
+/* Botão em fundo claro */
+.section--light .btn {
+  color: var(--black);
+}
+
+/* Botão sempre escuro */
+.btn--dark {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.btn--dark:hover {
+  opacity: 0.9;
+}
+.btn.btn--dark {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+  font-size: 16px; /* ajuste o tamanho da fonte conforme desejar */
+  padding: 12px 20px; /* ajuste o padding conforme desejar */
+}
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+.form {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 520px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+/* Inverte cores em fundo escuro */
+.section--dark .field input,
+.section--dark .field textarea {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+.site-footer {
+  background: var(--black);
+  color: var(--white);
+  padding: var(--space-4) 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+@media (max-width: 980px) {
+  .split,
+  .split--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .split--reverse .col-media {
+    order: 0;
+  }
+
+}

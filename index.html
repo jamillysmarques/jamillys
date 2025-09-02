@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Importa fontes do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <!-- Conecta o CSS externo -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Jamillys Marques — Portfólio</title>
+</head>
+
+<body>
+  <!-- Cabeçalho do site com menu de navegação -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#topo" class="brand">Jamillys Marques</a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <!-- Links do menu -->
+          <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção de capa (foto e nome) -->
+  <section id="topo" class="hero" role="banner" aria-label="Capa com foto e nome">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <p class="kicker">e-Sports</p>
+      <h1 class="display-name">Jamillys&nbsp;Marques</h1>
+      <p class="subtitle">Performance Analyst</p>
+    </div>
+  </section>
+
+  <!-- Seção Sobre mim -->
+  <section id="sobre" class="section section--light">
+    <div class="container split">
+      <div class="col col-text">
+        <h2>Sobre mim</h2>
+        <p>
+          Sou Jamillys Marques, Analista de Performance em eSports com foco em PUBG Mobile. Minha atuação se apoia em três pilares: análise de dados, para gerar insights estratégicos; inteligência artificial e machine learning, para transformar tecnologia em soluções inovadoras; e análise comportamental, para entender os fatores humanos que influenciam diretamente o desempenho competitivo.
+
+          Com formação em Engenharia de Software e cursos em instituições como Harvard, Yale e Stanford, desenvolvo métodos originais que unem tecnologia e performance. Meu objetivo é entregar às equipes não apenas relatórios, mas estratégias diferenciadas que ampliam sua competitividade.
+        </p>
+      </div>
+      <div class="col col-media">
+        <!-- Foto da seção Sobre mim -->
+        <figure class="ratio"> <img src="img/sobre.jpg" alt="Foto de apresentação" /> </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Formação acadêmica -->
+  <section id="formacao" class="section section--dark">
+    <div class="container split split--reverse">
+      <div class="col col-media">
+        <figure class="ratio"> <img src="img/formacao.jpg" alt="Imagem representando formação" /> </figure>
+      </div>
+      <div class="col col-text">
+        <h2>Formação acadêmica</h2>
+        <ul class="list-plain">
+          <li>Bacharelado em Engenharia de Software — UNINTER</li>
+          <li>CS50: Introduction to Computer Science — Harvard University (edX)</li>
+          <li>Machine Learning — Stanford University (Coursera, Andrew Ng)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção com frase de propósito -->
+  <section id="frase" class="section section--light section--center">
+    <div class="container narrow">
+      <h2 class="visually-hidden">Propósito</h2>
+      <p class="big-quote">Sem propósito, nada nasce. Sem performance, nada cresce.</p>
+    </div>
+  </section>
+
+  <!-- Seção Portfólio -->
+  <section id="portfolio" class="section section--dark section--center">
+    <div class="container">
+      <h2>Portfólio</h2>
+      <p class="lead">Acompanhe meus projetos.</p>
+      <!-- Link para o GitHub -->
+      <p> <a class="btn" href="https://github.com/jamillysmarques" target="_blank" rel="noopener"> Acessar meu GitHub </a> </p>
+    </div>
+  </section>
+
+  <!-- Seção Contato com formulário -->
+  <section id="contato" class="section section--light">
+    <div class="container split">
+      <div class="col col-text">
+        <h2>Contato</h2>
+        <p>Fale comigo. Respondo o quanto antes.</p>
+        <form action="#" method="post" class="form">
+          <!-- Campo nome -->
+          <label class="field">
+            <span>Nome</span>
+            <input type="text" name="nome" required />
+          </label>
+          <!-- Campo e-mail -->
+          <label class="field">
+            <span>E-mail</span>
+            <input type="email" name="email" required />
+          </label>
+          <!-- Campo mensagem -->
+          <label class="field">
+            <span>Mensagem</span>
+            <textarea name="mensagem" rows="4" required></textarea>
+          </label>
+          <!-- Botão de envio -->
+          <button type="submit" class="btn btn--dark" style="color: white !important; background: black !important; border-color: black !important; font-size: 16px; padding: 12px 20px;">Enviar</button>
+        </form>
+      </div>
+      <div class="col col-media">
+        <figure class="ratio"> <img src="img/contato.jpg" alt="Imagem ilustrativa de contato" /> </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container"> <small>© 2025 — Jamillys Marques • RU 3619591</small> </div>
+  </footer>
+</body>
+
+</html>
